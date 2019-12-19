@@ -1,0 +1,33 @@
+//4.14
+#include <iostream>
+#include <string>
+using namespace std;
+int main(){
+    int account_number;
+    float balance,total_charges,total_credit,credit_limit,new_balance;
+    cout<<"Enter Accoutn Number(or -1 to quit):";
+    cin>>account_number;
+    while (account_number!=-1) {
+        cout<<"Enter beginning Balance:";
+        cin>>balance;
+        cout<<"Enter Total Charges:";
+        cin>>total_charges;
+        cout<<"Enter Total Credits:";
+        cin>>total_credit;
+        cout<<"Enter Credit Limit:";
+        cin>>credit_limit;
+        new_balance=(balance+total_charges)-total_credit;
+        cout<<"New Balance is:"<<new_balance<<"\n";
+        cout<<"Accoutn:"<<account_number<<"\n";
+        cout<<"Credit limit:"<<credit_limit<<"\n";
+        cout<<"Balance:"<<new_balance<<"\n";
+        if(credit_limit<new_balance){
+            cout<<"Credit Limit Exceeded!\n";
+        }
+        cout<<"\n\n";
+        cout<<"Enter Accoutn Number(or -1 to quit):";
+        cin>>account_number;
+    }
+    return 0;
+}
+
