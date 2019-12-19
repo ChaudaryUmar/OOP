@@ -1,0 +1,49 @@
+#include <iostream>
+#include <string>
+using namespace std;
+double getPrice(int, int);
+
+int main() {
+    double total = 0.0f;
+    int product = 0, quantity = 0;
+
+    cout << "Program to add retail prices for 5 products.\n" <<endl;
+
+    while (product != -1) {
+        cout<< "Enter the product number and quantity sold (-1 to quit): ";
+        cin >> product;
+
+        if (product != -1) {
+            cin >> quantity;
+
+            total += getPrice(product, quantity);
+
+            printf("Running total: $%.2f\n", total);
+        }
+    }
+    return 0;
+}
+//Outise Main Function
+double getPrice(int product, int quantity) {
+    switch (product) {
+        case 1:
+            return 2.98 * quantity;
+            break;
+        case 2:
+            return 4.50 * quantity;
+            break;
+        case 3:
+            return 9.98 * quantity;
+            break;
+        case 4:
+            return 4.49 * quantity;
+            break;
+        case 5:
+            return 6.87 * quantity;
+            break;
+        default:
+            cout << "Incorrect product number entered." <<endl;
+            return 0.0f;
+            break;
+    }
+}
